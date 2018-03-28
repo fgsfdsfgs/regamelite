@@ -510,9 +510,7 @@ CHalfLifeMultiplay::CHalfLifeMultiplay()
 	m_fRoundCount = 0;
 	m_fIntroRoundCount = 0;
 
-#ifndef CSTRIKE
 	InstallBotControl();
-#endif // CSTRIKE
 
 	InstallHostageManager();
 

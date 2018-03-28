@@ -1,0 +1,7 @@
+all: server.suprx
+
+server.suprx:
+	$(MAKE) -C dlls -f Makefile.vita
+
+clean:
+	$(MAKE) -C dlls -f Makefile.vita clean

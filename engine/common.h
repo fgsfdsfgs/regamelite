@@ -81,8 +81,8 @@ typedef struct incomingtransfer_s
 #define printf2 _printf2
 #define chatf _print_chat
 
-#define Q_close _close
-#define Q_write _write
+#define Q_close fclose
+#define Q_write( f, ptr, sz ) fwrite( ptr, sz, 1, f )
 #define Q_memset memset
 #define Q_memcpy memcpy
 #define Q_strlen strlen

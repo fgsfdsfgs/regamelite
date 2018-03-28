@@ -558,6 +558,8 @@ inline BotChatterInterface::VerbosityType BotChatterInterface::GetVerbosity() co
 {
 	const char *string = cv_bot_chatter.string;
 
+	return OFF; // explodes on vita if we turn it on
+
 	if (string == NULL)
 		return NORMAL;
 

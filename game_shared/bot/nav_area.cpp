@@ -90,7 +90,7 @@ HidingSpot::HidingSpot(const Vector *pos, unsigned char flags)
 	TheHidingSpotList.AddToTail(this);
 }
 
-void HidingSpot::Save(int fd, unsigned int version) const
+void HidingSpot::Save(FILE *fd, unsigned int version) const
 {
 	Q_write(fd, &m_id, sizeof(unsigned int));
 	Q_write(fd, &m_pos, 3 * sizeof(float));

@@ -71,28 +71,28 @@
 	#include <sys/stat.h>
 	#include <io.h>
 #else // _WIN32
-	#include <arpa/inet.h>
+	//#include <arpa/inet.h>
 	#include <ctype.h>
 	//#include <dirent.h>
-	#include <dlfcn.h>
+	//#include <dlfcn.h>
 	//#include <elf.h>
 	#include <errno.h>
 	#include <fcntl.h>
 	#include <limits.h>
 	//#include <link.h>
-	#include <netdb.h>
-	#include <netinet/in.h>
-	#include <pthread.h>
-	#include <sys/ioctl.h>
-	#include <sys/mman.h>
-	#include <sys/socket.h>
+	//#include <netdb.h>
+	//#include <netinet/in.h>
+	//#include <pthread.h>
+	//#include <sys/ioctl.h>
+	//#include <sys/mman.h>
+	//#include <sys/socket.h>
 	#include <sys/stat.h>
 	#include <sys/time.h>
 	#include <sys/types.h>
 	#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__APPLE__)
 		#include <sys/sysctl.h>
 	#else
-		#include <sys/sysinfo.h>
+		//#include <sys/sysinfo.h>
 	#endif
 	#include <unistd.h>
 
@@ -119,6 +119,7 @@ typedef unsigned char      uint8;
 	typedef unsigned int uchar32;
 #endif
 #else // _WIN32
+#ifndef _STDINT
 	typedef unsigned long long uint64_t;
 	typedef unsigned int uint32_t;
 	typedef unsigned short uint16_t;
@@ -130,6 +131,7 @@ typedef unsigned char      uint8;
 		typedef short int16_t;
 		//typedef char int8_t;
 	#endif
+#endif
 typedef long long __int64_t;
 
 	typedef unsigned char byte;

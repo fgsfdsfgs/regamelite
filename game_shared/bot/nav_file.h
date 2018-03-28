@@ -52,7 +52,7 @@ public:
 	EntryType GetEntry(Place place) const;		// return the directory entry corresponding to this Place (0 = no entry)
 	void AddPlace(Place place);			// add the place to the directory if not already known
 	Place EntryToPlace(EntryType entry) const;	// given an entry, return the Place
-	void Save(int fd);				// store the directory
+	void Save(FILE *fd);				// store the directory
 	void Load(SteamFile *file);			// load the directory
 
 private:

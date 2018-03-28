@@ -4,6 +4,7 @@
 /*
 * Globals initialization
 */
+BotProfileManager g_BotProfileManager;
 BotProfileManager *TheBotProfiles = NULL;
 char *BotDifficultyName[] = { "EASY", "NORMAL", "HARD", "EXPERT", NULL };
 

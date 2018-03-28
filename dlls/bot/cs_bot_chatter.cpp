@@ -3,6 +3,8 @@
 /*
 * Globals initialization
 */
+
+BotPhraseManager g_BotPhraseManager;
 BotPhraseManager *TheBotPhrases = NULL;
 CountdownTimer BotChatterInterface::m_encourageTimer;
 IntervalTimer BotChatterInterface::m_radioSilenceInterval[ 2 ];

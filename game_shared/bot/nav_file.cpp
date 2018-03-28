@@ -65,7 +65,7 @@ Place PlaceDirectory::EntryToPlace(EntryType entry) const
 	return m_directory[i];
 }
 
-void PlaceDirectory::Save(int fd)
+void PlaceDirectory::Save(FILE *fd)
 {
 	// store number of entries in directory
 	EntryType count = static_cast <EntryType> (m_directory.Count ());
@@ -135,7 +135,7 @@ void CNavArea::Save(FILE *fp) const
 	base += 4;
 }
 
-void CNavArea::Save(int fd, unsigned int version)
+void CNavArea::Save(FILE *fd, unsigned int version)
 {
 	// save ID
 	Q_write(fd, &m_id, sizeof(unsigned int));
@@ -602,13 +602,9 @@ bool SaveNavigationMap(const char *filename)
 	// Store the NAV file
 	COM_FixSlashes(const_cast<char *>(filename));
 
-#ifdef WIN32
-	int fd = _open(filename, _O_BINARY | _O_CREAT | _O_WRONLY, _S_IREAD | _S_IWRITE);
-#else
-	int fd = creat(filename, S_IRUSR | S_IWUSR | S_IRGRP);
-#endif // WIN32
+	FILE *fd = fopen(filename, "wb");
 
-	if (fd < 0)
+	if (!fd)
 		return false;
 
 	// store "magic number" to help identify this kind of file

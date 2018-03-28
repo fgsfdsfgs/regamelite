@@ -162,7 +162,7 @@ public:
 	void SetFlags(unsigned char flags) { m_flags |= flags; }
 	unsigned char GetFlags() const { return m_flags; }
 
-	void Save(int fd, unsigned int version) const;
+	void Save(FILE *fd, unsigned int version) const;
 	void Load(SteamFile *file, unsigned int version);
 
 	const Vector *GetPosition() const { return &m_pos; }
@@ -228,7 +228,7 @@ public:
 	void Disconnect(CNavArea *area);					// disconnect this area from given area
 
 	void Save(FILE *fp) const;
-	void Save(int fd, unsigned int version);
+	void Save(FILE *fd, unsigned int version);
 
 	void Load(SteamFile *file, unsigned int version);
 	NavErrorType PostLoad();

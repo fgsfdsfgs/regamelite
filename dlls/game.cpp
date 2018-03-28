@@ -92,7 +92,7 @@ cvar_t sk_scientist_heal3 = { "sk_scientist_heal3", "0", 0, 0.0f, NULL };
 void EXT_FUNC GameDLLInit()
 {
 	g_bIsCzeroGame = UTIL_IsGame("czero");
-   g_bEnableCSBot = g_bIsCzeroGame || ENG_CHECK_PARM ("-bots", NULL) != 0;
+	g_bEnableCSBot = true;
 
 	g_psv_gravity = CVAR_GET_POINTER("sv_gravity");
 	g_psv_aim = CVAR_GET_POINTER("sv_aim");

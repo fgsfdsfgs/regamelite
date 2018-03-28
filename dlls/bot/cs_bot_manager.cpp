@@ -11,6 +11,8 @@ bool CCSBotManager::m_isLearningMap = false;
 bool CCSBotManager::m_isAnalysisRequested = false;
 NavEditCmdType CCSBotManager::m_editCmd = EDIT_NONE;
 
+extern BotPhraseManager g_BotPhraseManager;
+extern BotProfileManager g_BotProfileManager;
 
 CCSBotManager::CCSBotManager()
 {
@@ -31,11 +33,11 @@ CCSBotManager::CCSBotManager()
 
 	m_bServerActive = false;
 
-	TheBotPhrases = new BotPhraseManager;
+	TheBotPhrases = &g_BotPhraseManager;
 	// load the database of bot radio chatter
 	TheBotPhrases->Initialize("BotChatter.db", 0);
 
-	TheBotProfiles = new BotProfileManager;
+	TheBotProfiles = &g_BotProfileManager;
 	// make sure default voice bank is first
 	TheBotProfiles->FindVoiceBankIndex("BotChatter.db");
 

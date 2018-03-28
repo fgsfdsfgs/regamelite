@@ -548,12 +548,12 @@ void PM_CheckVelocity()
 		// Bound it.
 		if (pmove->velocity[i] > pmove->movevars->maxvelocity)
 		{
-			pmove->Con_DPrintf("PM  Got a velocity too high on %i\n", i);
+			//pmove->Con_DPrintf("PM  Got a velocity too high on %i\n", i);
 			pmove->velocity[i] = pmove->movevars->maxvelocity;
 		}
 		else if (pmove->velocity[i] < -pmove->movevars->maxvelocity)
 		{
-			pmove->Con_DPrintf("PM  Got a velocity too low on %i\n", i);
+			//pmove->Con_DPrintf("PM  Got a velocity too low on %i\n", i);
 			pmove->velocity[i] = -pmove->movevars->maxvelocity;
 		}
 	}
